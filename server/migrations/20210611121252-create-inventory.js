@@ -11,17 +11,21 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      image_url: {
+        type: Sequelize.STRING
+      },
       price: {
         type: Sequelize.INTEGER
       },
-      quantitiy: {
+      quantity: {
         type: Sequelize.INTEGER
       },
       status: {
         type: Sequelize.STRING
       },
       UserId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        foreignKey: true
       },
       createdAt: {
         allowNull: false,

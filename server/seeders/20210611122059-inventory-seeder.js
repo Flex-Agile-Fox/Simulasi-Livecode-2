@@ -1,10 +1,15 @@
 'use strict';
-const inventories = require('../db.json')
-
-inventories = inventory.map()
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    await queryInterface.bulkInsert('Users', [{
+      "id": 1,
+      "email": "admin@mail.com",
+      "password": "12345",
+      "createdAt": new Date(),
+      "updatedAt": new Date()
+      }], {});
+      
     await queryInterface.bulkInsert('Inventories', [{
       "id": 1,
       "name": "Apple Mac Mini 2018 Core i3 SSD 128 GB",
@@ -13,6 +18,8 @@ module.exports = {
       "quantity": 20,
       "status": "Bagus",
       "UserId": 1,
+      "createdAt": new Date(),
+      "updatedAt": new Date()
      }],
      [{
       "id": 1,
@@ -21,7 +28,9 @@ module.exports = {
       "price": 12990000,
       "quantity": 20,
       "status": "Bagus",
-      "UserId": 1
+      "UserId": 1,
+      "createdAt": new Date(),
+      "updatedAt": new Date()
      }],
      [{
       "id": 2,
@@ -30,7 +39,9 @@ module.exports = {
         "price": 825000,
         "quantity": 20,
         "status": "Bagus",
-        "UserId": 1
+        "UserId": 1,
+        "createdAt": new Date(),
+      "updatedAt": new Date()
      }],
      [{
       "id": 3,
@@ -39,7 +50,9 @@ module.exports = {
       "image_url": "https://static.bmdstatic.com/pk/product/medium/HP-Magenta-Ink-Cartridge-18-[C4938A]-SKU00208180_0-20140524131316.jpg",
       "quantity": 3,
       "status": "Bagus",
-      "UserId": 1
+      "UserId": 1,
+      "createdAt": new Date(),
+      "updatedAt": new Date()
      }],
      [{
       "id": 4,
@@ -48,7 +61,9 @@ module.exports = {
       "price": 139000,
       "quantity": 3,
       "status": "Bagus",
-      "UserId": 1
+      "UserId": 1,
+      "createdAt": new Date(),
+      "updatedAt": new Date()
      }],
      [{
       "id": 5,
@@ -57,13 +72,10 @@ module.exports = {
       "price": 139000,
       "quantity": 3,
       "status": "Bagus",
-      "UserId": 1
+      "UserId": 1,
+      "createdAt": new Date(),
+      "updatedAt": new Date()
      }], {});
-     await queryInterface.bulkInsert('Users', [{
-      "id": 1,
-      "email": "admin@mail.com",
-      "password": "12345"
-      }], {});
     /**
      * Add seed commands here.
      *
