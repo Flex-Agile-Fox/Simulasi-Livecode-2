@@ -8,11 +8,7 @@ const routes = require('./routes');
 app.use(cors);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(routes);
-
-app.get('/', (req, res) => {
-	res.send('hello');
-});
+app.use(routes);
 
 app.listen(port, () => {
 	console.log('app listening on port ' + port);
