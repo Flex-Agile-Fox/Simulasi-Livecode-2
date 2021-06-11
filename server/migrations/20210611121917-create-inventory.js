@@ -1,42 +1,48 @@
-'use strict';
+"use strict";
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Inventories', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      name: {
-        type: Sequelize.STRING
-      },
-      image_url: {
-        type: Sequelize.STRING
-      },
-      price: {
-        type: Sequelize.INTEGER
-      },
-      quantity: {
-        type: Sequelize.INTEGER
-      },
-      status: {
-        type: Sequelize.STRING
-      },
-      UserId: {
-        type: Sequelize.INTEGER
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
-    });
-  },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Inventories');
-  }
+	up: async (queryInterface, Sequelize) => {
+		await queryInterface.createTable("Inventories", {
+			id: {
+				allowNull: false,
+				autoIncrement: true,
+				primaryKey: true,
+				type: Sequelize.INTEGER,
+			},
+			name: {
+				type: Sequelize.STRING,
+				allowNull: false,
+			},
+			image_url: {
+				type: Sequelize.STRING,
+				allowNull: false,
+			},
+			price: {
+				type: Sequelize.INTEGER,
+				allowNull: false,
+			},
+			quantity: {
+				type: Sequelize.INTEGER,
+				allowNull: false,
+			},
+			status: {
+				type: Sequelize.STRING,
+				allowNull: false,
+			},
+			UserId: {
+				type: Sequelize.INTEGER,
+				allowNull: false,
+			},
+			createdAt: {
+				allowNull: false,
+				type: Sequelize.DATE,
+			},
+			updatedAt: {
+				allowNull: false,
+				type: Sequelize.DATE,
+			},
+		});
+	},
+	down: async (queryInterface, Sequelize) => {
+		await queryInterface.dropTable("Inventories");
+	},
 };

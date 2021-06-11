@@ -1,9 +1,13 @@
 "use strict";
 let users = require("../db.json").users;
+const bcrypt = require("bcrypt");
 
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
 		users = users.map((user) => {
+			const salt = bcrypt.genSaltSync(10);
+			const hash = bcrypt.hashSync(user.password, salt);
+			user.password = hash;
 			return {
 				...user,
 				createdAt: new Date(),
